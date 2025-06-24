@@ -24,19 +24,13 @@ It allows users to add, view, edit, and delete tasks directly from the terminal.
 ## 🛠️ How to Run
 
 1. Clone the repository:
-git clone https://github.com/yourusername/todo-cli-app.git
+git clone https://github.com/sravani_1410/todo-cli-app.git
 cd todo-cli-app
 
-markdown
-Copy
-Edit
 
 2. Run the script:
 python todo.py
 
-yaml
-Copy
-Edit
 
 3. Follow the menu prompts to interact with your task list.
 
