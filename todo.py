@@ -7,7 +7,9 @@ def show_menu():
     print("1. Add Task")
     print("2. View Tasks")
     print("3. Delete Task")
-    print("4. Exit")
+    print("4. Edit Task")
+    print("5. Exit")
+
 
 def add_task():
     task = input("Enter new task: ")
@@ -32,10 +34,25 @@ def delete_task():
         except:
             print("⚠️ Invalid task number.")
 
-# Main loop
+def edit_task():
+    view_tasks()
+    if tasks:
+        try:
+            num = int(input("Enter task number to edit: "))
+            if 1 <= num <= len(tasks):
+                print(f"Current task: {tasks[num - 1]}")
+                new_task = input("Enter updated task: ")
+                tasks[num - 1] = new_task
+                print("✏️ Task updated successfully.")
+            else:
+                print("❌ Task number out of range.")
+        except:
+            print("⚠️ Invalid input. Please enter a number.")
+
+#Main Loop
 while True:
     show_menu()
-    choice = input("Enter your choice (1-4): ")
+    choice = input("Enter your choice (1-5): ")
 
     if choice == '1':
         add_task()
@@ -44,7 +61,10 @@ while True:
     elif choice == '3':
         delete_task()
     elif choice == '4':
+        edit_task()
+    elif choice == '5':
         print("👋 Exiting To-Do List. Bye!")
         break
     else:
         print("❌ Invalid choice. Please try again.")
+
